@@ -1,9 +1,9 @@
-import { createStyleSheet } from "react-native-unistyles";
+import { StyleSheet } from "react-native-unistyles";
 import { Colors } from "./Constants";
 import { Platform } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
-export const restaurantStyles = createStyleSheet(({ device, colors, border }) => ({
+export const restaurantStyles = StyleSheet.create(({ device, colors, border }) => ({
     listContainer: {
         paddingBottom: 300
     },
@@ -74,7 +74,7 @@ export const shadowStyle = {
     shadowColor: Colors.border,
 }
 
-export const restaurantHeaderStyles = createStyleSheet(({ device, colors, border }) => ({
+export const restaurantHeaderStyles = StyleSheet.create(({ device, colors, border }) => ({
     headerContainer: {
         flexDirection: "row",
         alignItems: 'center',
@@ -115,7 +115,7 @@ export const restaurantHeaderStyles = createStyleSheet(({ device, colors, border
 }))
 
 
-export const searchStyles = createStyleSheet(({ device, colors, border }) => ({
+export const searchStyles = StyleSheet.create(({ device, colors, border }) => ({
     container: {
         backgroundColor: colors.background,
         shadowOffset: { width: 1, height: -4 },

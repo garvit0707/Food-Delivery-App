@@ -1,9 +1,9 @@
 import { RFValue } from "react-native-responsive-fontsize";
-import { createStyleSheet } from "react-native-unistyles";
+import {StyleSheet } from "react-native-unistyles";
 import { isBannerHeight } from "./Constants";
 import { Platform } from "react-native";
 
-export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
+export const homeStyles = StyleSheet.create(({ colors, device, border }) => ({
     container: {
         flex: 1,
         backgroundColor: colors.background

@@ -1,9 +1,9 @@
 import { RFValue } from "react-native-responsive-fontsize";
-import { createStyleSheet } from "react-native-unistyles";
+import { StyleSheet } from "react-native-unistyles";
 import { BOTTOM_TAB_HEIGHT } from "./Constants";
 
 
-export const tabStyles = createStyleSheet(({ colors, fonts, device }) => ({
+export const tabStyles = StyleSheet.create(({ colors, fonts, device }) => ({
     tabContainer: {
         width: device.width * 0.82,
         flexDirection: 'row',

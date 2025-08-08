@@ -1,4 +1,4 @@
-import { UnistylesRegistry } from 'react-native-unistyles';
+import {  StyleSheet   } from 'react-native-unistyles';
 import { Colors, Fonts } from './Constants';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { Dimensions } from 'react-native';
@@ -39,16 +39,19 @@ export const defaultTheme = {
     }
 } as const;
 
+const appThemes ={
+    default: defaultTheme
+}  
+
+type AppThemes = typeof appThemes
+
 declare module 'react-native-unistyles' {
-    interface UnistylesThemes {
-        default: typeof defaultTheme;
-    }
+    export interface UnistylesThemes extends AppThemes {}
 }
 
-UnistylesRegistry
-    .addThemes({
-        default: defaultTheme,
+ StyleSheet.configure({
+      settings: { 
+          adaptiveThemes: false, 
+        },
+        themes: appThemes
     })
-    .addConfig({
-        adaptiveThemes: true,
-    });

@@ -1,8 +1,8 @@
 import { Platform } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
-import { createStyleSheet } from "react-native-unistyles";
+import {  StyleSheet } from "react-native-unistyles";
 
-export const modelStyles = createStyleSheet(({ device, border, colors }) => ({
+export const modelStyles = StyleSheet.create(({ device, border, colors }) => ({
     headerContainer: {
         flexDirection: 'row',
         alignItems: 'center',

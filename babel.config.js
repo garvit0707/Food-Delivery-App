@@ -4,6 +4,11 @@ module.exports = function (api) {
     presets: ['module:@react-native/babel-preset'],
     plugins: [
       'react-native-reanimated/plugin',
+      ['react-native-unistyles/plugin',
+      {
+          root: './src/unistyles', 
+        },
+      ],
       [
         'module-resolver',
         {

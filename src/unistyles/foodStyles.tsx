@@ -1,7 +1,7 @@
 import { RFValue } from "react-native-responsive-fontsize";
-import { createStyleSheet } from "react-native-unistyles";
+import {StyleSheet} from "react-native-unistyles";
 
-export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
+export const foodStyles = StyleSheet.create(({ device, colors, border }) => ({
     container: {
         flexDirection: "row",
         alignItems: 'flex-start',

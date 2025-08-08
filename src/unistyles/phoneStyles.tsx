@@ -1,4 +1,4 @@
-import { createStyleSheet } from "react-native-unistyles";
+import { StyleSheet } from "react-native-unistyles";
 import { Colors } from "./Constants";
 
 export const shadowStyle = {
@@ -11,7 +11,7 @@ export const shadowStyle = {
     borderRadius: 10,
 }
 
-export const phoneStyles = createStyleSheet(({ colors, fonts, border }) => ({
+export const phoneStyles = StyleSheet.create(({ colors, fonts, border }) => ({
     container: {
         gap: 10,
         flexDirection: 'row',

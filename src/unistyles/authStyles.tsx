@@ -1,6 +1,6 @@
-import { createStyleSheet } from "react-native-unistyles";
+import { StyleSheet } from "react-native-unistyles";
 
-export const splashStyles = createStyleSheet(({ colors, device }) => ({
+export const splashStyles = StyleSheet.create(({ colors, device }) => ({
     container: {
         flex: 1,
         backgroundColor: colors.primary,
@@ -28,7 +28,7 @@ export const splashStyles = createStyleSheet(({ colors, device }) => ({
     }
 }))
 
-export const loginStyles = createStyleSheet(({ colors, device, border }) => ({
+export const loginStyles = StyleSheet.create(({ colors, device, border }) => ({
     container: {
         flex: 1,
         backgroundColor: colors.background,

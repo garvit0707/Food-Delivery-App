@@ -1,6 +1,6 @@
-import { createStyleSheet } from "react-native-unistyles";
+import { StyleSheet } from "react-native-unistyles";
 
-export const emptyStyles = createStyleSheet(({ colors, device, border }) => ({
+export const emptyStyles = StyleSheet.create(({ colors, device, border }) => ({
     container: (isLive: boolean = false) => ({
         flex: 1,
         justifyContent: "center",
