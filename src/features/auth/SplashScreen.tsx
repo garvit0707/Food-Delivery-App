@@ -1,8 +1,9 @@
 import React, { FC, useCallback } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image, } from 'react-native';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { withUnistyles } from 'react-native-unistyles';
 import { splashStyles } from '@unistyles/authStyles';
+import Animated, {FadeInDown} from "react-native-reanimated";
 
 type RootStackParamList = {
   test: undefined;
@@ -18,10 +19,13 @@ const SplashScreen: FC = () => {
 
   return (
     <View style={splashStyles.container}>
-      <Text>This is the splash screen</Text>
-      <TouchableOpacity onPress={handlePress}>
-        {/* <Text style={style.msgText}>Press me</Text> */}
-      </TouchableOpacity>
+      <Image source={require("@assets/images/logo_t.png")} style={splashStyles.logoImage}></Image>
+      <Animated.View
+        style={splashStyles.animatedContainer}
+        entering = {FadeInDown.delay(400).duration(800)}>
+          <Image source={require("@assets/images/tree.png")} 
+          style={splashStyles.treeImage}></Image>
+        </Animated.View>
     </View>
   );
 };
