@@ -1,12 +1,18 @@
 import React from 'react'
-import {View, Text} from "react-native";
+import {View,Text,Image} from "react-native";
+import { withUnistyles } from 'react-native-unistyles';
+import { emptyStyles } from '@unistyles/emptyStyles';
+
 
 const LiveScreen = () => {
   return (
-    <View>
-      <Text>this is the live screen</Text>
+    <View style={emptyStyles.container(true)}>
+        <Image 
+        source={require("@assets/images/coming_soon2.jpg")}
+        style ={emptyStyles.emptyImage}
+        />
     </View>
   )
 }
 
-export default LiveScreen;
+export default withUnistyles(LiveScreen);
