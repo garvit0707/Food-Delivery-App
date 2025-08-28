@@ -21,34 +21,38 @@ import useKeyboardOffsetHeight from '@utils/useKeyboardOffsetHeight';
 import { transformer } from 'metro.config';
 
 const LoginScreen: FC = () => {
-    const animatedValue = useRef(new Animated.Value(0)).current
-    const keyboardOffsetHeight = useKeyboardOffsetHeight()
-    const [phone, setPhone] = useState('');
-    const [loading, setLoading] = useState(false);
+  const animatedValue = useRef(new Animated.Value(0)).current;
+  const keyboardOffsetHeight = useKeyboardOffsetHeight();
+  const [phone, setPhone] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = async() => {
-        setLoading(false);
-        setTimeout(() => {
-            setLoading(false);
-            resetAndNavigate("UserBottomTab")
-        }, 2000);
+  const handleLogin = async () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      resetAndNavigate('UserBottomTab');
+    }, 2000);
   };
-  
-  useEffect(()=>{
-    if (keyboardOffsetHeight == 0){
-        Animated.timing(animatedValue,{
-            toValue:0,
-            duration:500,
-            useNativeDriver:true
-        }).start()
-    } else{
-        Animated.timing(animatedValue,{
-            toValue: -keyboardOffsetHeight*0.25,
-            duration: 500,
-            useNativeDriver:true
-        }).start()
+
+  useEffect(() => {
+    if (keyboardOffsetHeight == 0) {
+      Animated.timing(animatedValue, {
+        toValue: 0,
+        duration: 500,
+        useNativeDriver: true,
+      }).start();
+    } else {
+      Animated.timing(animatedValue, {
+        toValue: -keyboardOffsetHeight * 0.25,
+        duration: 500,
+        useNativeDriver: true,
+      }).start();
     }
-  },[keyboardOffsetHeight])
+  }, [keyboardOffsetHeight]);
+  {
+    console.log('loading state is', loading);
+  }
+
   return (
     <View style={loginStyles.container}>
       <StatusBar hidden={Platform.OS !== 'android'} />
@@ -61,7 +65,7 @@ const LoginScreen: FC = () => {
         bounces={false}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
-        style={{transform: [{translateY:animatedValue}] }}
+        style={{ transform: [{ translateY: animatedValue }] }}
         contentContainerStyle={loginStyles.bottomContainer}
       >
         <CustomText
@@ -86,7 +90,7 @@ const LoginScreen: FC = () => {
           onPress={handleLogin}
         >
           {loading ? (
-            <ActivityIndicator size={'small'}></ActivityIndicator>
+            <ActivityIndicator size={'small'} color={'white'}></ActivityIndicator>
           ) : (
             <CustomText color="#fff" fontFamily="Okra-medium" variant="h5">
               Continue

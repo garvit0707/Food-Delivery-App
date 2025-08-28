@@ -4,7 +4,7 @@ import "@unistyles/unistyles"
 import Navigation from '@navigation/Navigation';
 
 const App = () => {
-  console.log("erroror")
+  // console.log("erroror")
   return (
     <>
       <Navigation/>

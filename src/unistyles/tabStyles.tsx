@@ -47,7 +47,7 @@ export const tabStyles = StyleSheet.create(({ colors, fonts, device }) => ({
     },
     slidingIndicator: {
         position: 'absolute',
-        top: 0,
+        top: -25,
         height: 3,
         borderBottomLeftRadius: 40,
         borderBottomRightRadius: 40,
